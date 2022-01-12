@@ -3,6 +3,7 @@
     // COLORS
     --color: #9a9a9a;
     --background-color: #1c1c1c;
+    --content-bg-color: #212121;
     --divider: #303030;
     --accent-color: #87afd7;
 }
@@ -10,6 +11,7 @@
 :root.light-theme {
   --color: #262626;
   --background-color: #efefef
+  --content-bg-color: #212121;
   // diveder #dbdbdb
 }
 
@@ -19,6 +21,7 @@
     // COLORS
     --color: #9a9a9a;
     --background-color: #1c1c1c;
+    --content-bg-color: #212121;
     --divider: #303030;
     --accent-color: #87afd7;
   }
@@ -39,6 +42,7 @@
     // COLORS
     --color: #262626;
     --background-color: #efefef;
+    --content-bg-color: #212121;
     --divider: #d4d4d4;
     --accent-color: #297bcd;
   }

@@ -11,6 +11,9 @@
 @import './blocks/message.scss';
 @import './blocks/social.scss';
 
+.root {
+  height: 100%;
+}
 
 .color-test {
   color: var(--color);

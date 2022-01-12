@@ -1,0 +1,46 @@
+.header-user-menu-root {
+  position: relative;
+}
+
+.profilte-button-wrapper {
+  font-weight: 600;
+  font-size: 1.3rem;
+  cursor: pointer;
+  &:hover {
+    color: var(--accent-color); 
+  }
+}
+
+.accent {
+  cursor: pointer;
+  &:hover {
+    color: var(--accent-color); 
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+  -khtml-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+}
+
+.header-user-menu-wrapper {
+  width: 100px;
+  height: 100px;
+  background-color: var(--content-bg-color);
+  border: 1px solid var(--divider);
+  position: absolute;
+  right: 0%;
+  top: 4vh;
+  z-index: 1;
+  border-radius: 1.2rem;
+  padding: 14px;
+}
+
+.header-user-menu-item {
+  font-size: 1.6rem;
+  padding-bottom: 6px;
+}

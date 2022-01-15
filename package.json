@@ -21,7 +21,7 @@
   "homepage": "https://github.com/guesswhozzz/rufgc-website-dummy#readme",
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "@webpack-cli/serve": "^1.6.0",
     "babel-loader": "^8.2.3",
@@ -34,11 +34,11 @@
     "node-sass": "^6.0.1",
     "postcss-loader": "^5.3.0",
     "postcss-preset-env": "^6.7.0",
-    "sass": "^1.43.5",
-    "sass-loader": "^12.3.0",
+    "sass": "^1.48.0",
+    "sass-loader": "^12.4.0",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.64.4",
+    "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^3.11.3",
     "webpack-merge": "^5.8.0"

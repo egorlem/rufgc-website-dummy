@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './profile.scss';
 
 const UserMenuButton = (props) => {
   const { isHeaderDropDownOpen, setIsHeaderDropDownOpen } = props;
-  useEffect(()=> {
+  useEffect(() => {
     console.log('render');
   })
   return (
@@ -19,13 +20,19 @@ const UserMenuButton = (props) => {
 }
 
 const UserDropDownMenu = () => {
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+  }
   return (
     <>
       <div className="header-user-menu-wrapper noselect">
         <div className="header-user-menu-item accent">
-          Профиль
+          <NavLink to="/profile" >Профиль</NavLink>
         </div>
-        <div className="header-user-menu-item accent">
+        <div
+          className="header-user-menu-item accent"
+          onClick={handleLogout}
+        >
           Выйти
         </div>
       </div>
@@ -39,9 +46,9 @@ const HeaderUserMenu = () => {
   return (
     <>
       <div className="header-user-menu-root">
-        <UserMenuButton 
-           setIsHeaderDropDownOpen={setIsHeaderDropDownOpen}
-           isHeaderDropDownOpen={isHeaderDropDownOpen}
+        <UserMenuButton
+          setIsHeaderDropDownOpen={setIsHeaderDropDownOpen}
+          isHeaderDropDownOpen={isHeaderDropDownOpen}
         />
         {isHeaderDropDownOpen && <UserDropDownMenu />}
       </div>

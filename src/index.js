@@ -9,4 +9,4 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 // new Theme('blue');
 
-console.error('Failed to load resource: the server responded with a status of 402 (Payment Required) ');
+// console.error('Failed to load resource: the server responded with a status of 402 (Payment Required) ');

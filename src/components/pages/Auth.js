@@ -2,10 +2,8 @@ import React, { useCallback } from 'react'
 import { Navigate, useNavigate } from 'react-router'
 
 const AuthPage = () => {
-  const navigate = useNavigate()
-  if (localStorage.getItem('token')) {
-    console.log('fldskfjsdlkfjslkj');
-  }
+  // const navigate = useNavigate()
+
   const handleAuth = useCallback(() => {
     localStorage.setItem('token', '__DEV__')
   }, [])

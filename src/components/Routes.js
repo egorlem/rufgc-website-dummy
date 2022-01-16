@@ -16,33 +16,29 @@ import NotFound from './pages/NotFound'
 import Register from './pages/Register'
 import Main from './pages/Main'
 
-const getAuth = () => {
-  const isAuth = localStorage.getItem('token');
-  return isAuth;
+const getAuth = ({ isAuth }) => {
+  return Boolean(isAuth);
 }
 
-function RequireAuth({ children }) {
-  let isAuthenticated = getAuth();
+function RequireAuth({ children, isAuth }) {
+   let isAuthenticated = getAuth({ isAuth });
+  console.log(isAuthenticated);
   return isAuthenticated ? children : <Navigate to='/auth' />
 }
-function RequireAuth2({ children }) {
-  const location = useLocation();
-  console.log(location);
-  let isAuthenticated = getAuth();
-  return !isAuthenticated ? children : <Navigate to='/' />
-}
 
-const MainAppRouter = () => {
+const MainAppRouter = (props) => {
+  console.log(props);
+  const { isAuth } = props;
   return (
     <Routes>
       <Route exact path="/" element={<Main />} />
       <Route
         path="/profile"
-        element={<RequireAuth><Profile /></RequireAuth>}
+        element={<RequireAuth isAuth={isAuth} ><Profile /></RequireAuth>}
       />
       <Route
         exact path="/auth"
-        element={<RequireAuth2><Auth /></RequireAuth2>}
+        element={<Auth />}
       />
       <Route
         exact path="/register"

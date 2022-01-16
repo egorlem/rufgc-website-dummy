@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './profile.scss';
 
 const UserMenuButton = (props) => {
   const { isHeaderDropDownOpen, setIsHeaderDropDownOpen } = props;
-  useEffect(() => {
-    console.log('render');
-  })
   return (
     <>
       <div

@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
+      filename: '[name].[contenthash].css',
       chunkFilename: '[id].css',
     }),
     new HTMLWebpackPlugin({
@@ -45,17 +45,29 @@ module.exports = {
             },
           ],
         },
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.(woff|woff2)$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         mimetype: 'application/font-woff',
+      //         name: '[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
+      // {
+      //   test: /\.(ttf|eot)$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 8192,
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
@@ -74,6 +86,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(jpe?g|svg|png|gif|ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
@@ -82,11 +98,13 @@ module.exports = {
     },
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+
     compress: true,
     historyApiFallback: true,
-    overlay: true,
     open: true,
-    port: 9000,
+    port: 3000,
   },
 };
